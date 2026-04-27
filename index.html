@@ -1752,18 +1752,7 @@ const products = [
 {id:18,title:"Stronger With You Intensely 100 ml",desc:"Stronger With You Intensely 100 ml",price:1600000,img:"produk2.PNG",tag:"premium",link:"Produk 2"},
 {id:19,title:"Stronger With You Parfum 100 ml",desc:"Stronger With You Parfum 100 ml",price:2500000,img:"produk3.PNG",tag:"premium",link:"Produk 3"},
 {id:20,title:"Louis Voitton City Of Stars 100ml",desc:"Louis Voitton City Of Stars 100ml",price:5500000,img:"produk4.PNG",tag:"premium",link:"Produk 4"},
-{id:21,title:"Louis Voitton Meteore 100ml",desc:"Louis Voitton Meteore 100ml",price:6500000,img:"produk5.PNG",tag:"premium",link:"Produk 5"},
-{id:22,title:"Maison Francis Kurkdjian Baccarat Rouge 540 70 ml",desc:"Aroma manis-amber yang elegan, cocok untuk tampilan mewah dan berkesan.",price:4200000,img:"https://placehold.co/600x800/111827/f5d37a?text=Baccarat+Rouge+540",tag:"premium",link:"Produk 22"},
-{id:23,title:"Creed Aventus 100 ml",desc:"Wangi fresh-woody yang maskulin, tegas, dan mudah disukai banyak orang.",price:5650000,img:"https://placehold.co/600x800/1f2937/f5d37a?text=Creed+Aventus",tag:"premium",link:"Produk 23"},
-{id:24,title:"Tom Ford Oud Wood 100 ml",desc:"Karakter oud lembut dengan kesan hangat, classy, dan sangat versatile.",price:3950000,img:"https://placehold.co/600x800/0f172a/f5d37a?text=Tom+Ford+Oud+Wood",tag:"special",link:"Produk 24"},
-{id:25,title:"Parfums de Marly Layton 125 ml",desc:"Manis-spicy yang smooth dan mewah, pas untuk acara santai maupun formal.",price:4550000,img:"https://placehold.co/600x800/1e293b/f5d37a?text=Layton+125+ml",tag:"premium",link:"Produk 25"},
-{id:26,title:"Le Labo Santal 33 50 ml",desc:"Aroma woody modern yang unik, clean, dan punya karakter signature kuat.",price:3250000,img:"https://placehold.co/600x800/111827/f5d37a?text=Santal+33",tag:"special",link:"Produk 26"},
-{id:27,title:"Initio Oud for Greatness 90 ml",desc:"Oud tegas dan berwibawa dengan nuansa hangat yang tahan lama.",price:4890000,img:"https://placehold.co/600x800/1f2937/f5d37a?text=Oud+for+Greatness",tag:"special",link:"Produk 27"},
-{id:28,title:"Xerjoff Naxos 100 ml",desc:"Perpaduan madu, citrus, dan tobacco yang mewah serta memikat.",price:5100000,img:"https://placehold.co/600x800/0f172a/f5d37a?text=Xerjoff+Naxos",tag:"premium",link:"Produk 28"},
-{id:29,title:"Mancera Cedrat Boise 120 ml",desc:"Segar, fruity, dan woody dengan performa yang nyaman dipakai harian.",price:2450000,img:"https://placehold.co/600x800/1e293b/f5d37a?text=Cedrat+Boise",tag:"daily",link:"Produk 29"},
-{id:30,title:"Byredo Gypsy Water 100 ml",desc:"Aroma clean dan lembut dengan kesan artisanal yang modern.",price:3650000,img:"https://placehold.co/600x800/111827/f5d37a?text=Gypsy+Water",tag:"premium",link:"Produk 30"},
-{id:31,title:"Nishane Hacivat 100 ml",desc:"Citrus-woody dengan karakter cerah, rapi, dan sangat elegan.",price:4350000,img:"https://placehold.co/600x800/1f2937/f5d37a?text=Nishane+Hacivat",tag:"special",link:"Produk 31"}
-
+{id:21,title:"Louis Voitton Meteore 100ml",desc:"Louis Voitton Meteore 100ml",price:6500000,img:"produk5.PNG",tag:"premium",link:"Produk 5"}
 ];
 
 
@@ -1793,7 +1782,7 @@ const products = [
         catalog.appendChild(card);
       });
     }
-  renderCatalog(products); // tampilkan semua produk
+  renderCatalog(products.slice(0,5)); // tampilkan semua produk// tampilkan 8 produk unggulan
 
     // Render gallery masonry
     const galleryGrid = document.getElementById('galleryGrid');
