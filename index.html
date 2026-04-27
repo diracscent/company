@@ -1720,120 +1720,6 @@ const productDescriptions = {
       opacity: 0.9 !important;
     }
   </style>
-
-<style>
-#catalog{
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 18px;
-}
-#catalog .product-card.product-card-catalog{
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  min-height: 300px;
-  background: linear-gradient(180deg, #08101d 0%, #10192c 100%);
-  border: 1px solid rgba(212,175,55,.28);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 12px 34px rgba(0,0,0,.38), 0 0 0 1px rgba(212,175,55,.08) inset;
-}
-#catalog .catalog-media{
-  position: relative;
-  flex: 0 0 60%;
-  min-height: 300px;
-  background: #09111e;
-}
-#catalog .catalog-media img,
-#catalog .catalog-media .no-img{
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  object-fit: cover;
-  display: block;
-}
-#catalog .catalog-info{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 18px 16px 16px;
-  text-align: center;
-}
-#catalog .catalog-info .product-title{
-  font-family: 'Playfair Display', serif;
-  font-size: 1.12rem;
-  line-height: 1.22;
-  color: #f8f4ea;
-  margin-bottom: 8px;
-}
-#catalog .catalog-info .product-price{
-  color: #f0c35f;
-  font-size: 1.28rem;
-  margin-bottom: 10px;
-}
-#catalog .catalog-info .muted.small{
-  color: rgba(255,255,255,.7) !important;
-}
-#catalog .catalog-actions{
-  margin-top: 14px;
-}
-#catalog .catalog-actions .btn{
-  min-width: 84px;
-}
-#catalog .btn-outline-secondary{
-  border: 1px solid rgba(255,255,255,.14) !important;
-  color: #fff !important;
-  background: rgba(255,255,255,.02) !important;
-}
-#catalog .btn-primary-grad{
-  background: linear-gradient(90deg,#ff6ea8,#7d63ff) !important;
-  color: #fff !important;
-}
-#catalog .add-to-cart-btn{
-  display: block;
-  width: 100%;
-  margin: 10px auto 0;
-}
-#galleryGrid .product-card{
-  background: #111827;
-  border: 1px solid rgba(212,175,55,.18);
-  border-radius: 14px;
-  overflow: hidden;
-}
-#galleryGrid .product-card .product-title{
-  color: #fff;
-}
-#galleryGrid .product-card .product-price{
-  color: #ffd966;
-}
-@media (max-width: 768px){
-  #catalog .product-card.product-card-catalog{
-    min-height: 260px;
-  }
-  #catalog .catalog-media,
-  #catalog .catalog-media img,
-  #catalog .catalog-media .no-img{
-    min-height: 260px;
-  }
-  #catalog .catalog-info{
-    padding: 14px 12px;
-  }
-  #catalog .catalog-info .product-title{
-    font-size: 1rem;
-  }
-  #catalog .catalog-info .product-price{
-    font-size: 1.1rem;
-  }
-  #catalog .catalog-actions{
-    gap: 8px !important;
-  }
-  #catalog .catalog-actions .btn{
-    min-width: 70px;
-    padding: .45rem .7rem;
-  }
-}
-</style>
-
 </body>
 </html>
 <!-- Scripts -->
@@ -1866,17 +1752,7 @@ const products = [
 {id:18,title:"Stronger With You Intensely 100 ml",desc:"Stronger With You Intensely 100 ml",price:1600000,img:"produk2.PNG",tag:"premium",link:"Produk 2"},
 {id:19,title:"Stronger With You Parfum 100 ml",desc:"Stronger With You Parfum 100 ml",price:2500000,img:"produk3.PNG",tag:"premium",link:"Produk 3"},
 {id:20,title:"Louis Voitton City Of Stars 100ml",desc:"Louis Voitton City Of Stars 100ml",price:5500000,img:"produk4.PNG",tag:"premium",link:"Produk 4"},
-{id:21,title:"Louis Voitton Meteore 100ml",desc:"Louis Voitton Meteore 100ml",price:6500000,img:"produk5.PNG",tag:"premium",link:"Produk 5"},
-{id:22,title:"Noir Atelier 01 100 ml",desc:"Noir Atelier 01 100 ml",price:720000,img:"katalog22.PNG",tag:"template",link:"Noir Atelier 01"},
-{id:23,title:"Velvet Citrus 02 100 ml",desc:"Velvet Citrus 02 100 ml",price:680000,img:"katalog23.PNG",tag:"template",link:"Velvet Citrus 02"},
-{id:24,title:"Amber Suede 03 100 ml",desc:"Amber Suede 03 100 ml",price:850000,img:"katalog24.PNG",tag:"template",link:"Amber Suede 03"},
-{id:25,title:"Rose Noir 04 100 ml",desc:"Rose Noir 04 100 ml",price:790000,img:"katalog25.PNG",tag:"template",link:"Rose Noir 04"},
-{id:26,title:"Noble Sandal 05 100 ml",desc:"Noble Sandal 05 100 ml",price:920000,img:"katalog26.PNG",tag:"template",link:"Noble Sandal 05"},
-{id:27,title:"Aqua Prestige 06 100 ml",desc:"Aqua Prestige 06 100 ml",price:650000,img:"katalog27.PNG",tag:"template",link:"Aqua Prestige 06"},
-{id:28,title:"Citrus Royal 07 100 ml",desc:"Citrus Royal 07 100 ml",price:700000,img:"katalog28.PNG",tag:"template",link:"Citrus Royal 07"},
-{id:29,title:"Imperial Wood 08 100 ml",desc:"Imperial Wood 08 100 ml",price:990000,img:"katalog29.PNG",tag:"template",link:"Imperial Wood 08"},
-{id:30,title:"Lunar Vanilla 09 100 ml",desc:"Lunar Vanilla 09 100 ml",price:760000,img:"katalog30.PNG",tag:"template",link:"Lunar Vanilla 09"},
-{id:31,title:"Crystal Musk 10 100 ml",desc:"Crystal Musk 10 100 ml",price:810000,img:"katalog31.PNG",tag:"template",link:"Crystal Musk 10"}
+{id:21,title:"Louis Voitton Meteore 100ml",desc:"Louis Voitton Meteore 100ml",price:6500000,img:"produk5.PNG",tag:"premium",link:"Produk 5"}
 ];
 
 
@@ -1891,18 +1767,14 @@ const products = [
       catalog.innerHTML = '';
       list.forEach(p=>{
         const card = document.createElement('article');
-        card.className = 'product-card product-card-catalog';
+        card.className = 'product-card';
         card.innerHTML = `
-          <div class="catalog-media">
-            <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="900" height="900" onerror="this.style.display='none';this.parentNode.querySelector('.no-img').style.display='flex'">
-            <div class="no-img" style="display:none;align-items:center;justify-content:center;height:100%;min-height:280px;background:#0b1120;color:#f3f1ee;font-weight:700;border-radius:0;">${p.title}</div>
-            <span class="badge-top special">Premium</span>
-          </div>
-          <div class="product-body catalog-info">
+          <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="300" height="400">
+          <div class="product-body">
             <div class="product-title">${p.title}</div>
             <div class="product-price">${formatRupiah(p.price)}</div>
             <p class="muted small">${p.desc}</p>
-            <div class="d-flex justify-content-center gap-2 mt-2 catalog-actions">
+            <div class="d-flex justify-content-center gap-2 mt-2">
               <button class="btn btn-sm btn-outline-secondary" onclick="viewProduct(${p.id})">Lihat</button>
               <a class="btn btn-sm btn-primary-grad" href="https://wa.me/62882009257589?text=${encodeURIComponent('Halo kak, saya ingin memesan '+p.title)}" target="_blank">Pesan</a>
             </div>
@@ -1910,8 +1782,7 @@ const products = [
         catalog.appendChild(card);
       });
     }
-    const catalogProducts = products.slice(19,21); // 2 produk unggulan awal
-    renderCatalog(catalogProducts);
+  renderCatalog(products.slice(0,5)); // tampilkan semua produk// tampilkan 8 produk unggulan
 
     // Render gallery masonry
     const galleryGrid = document.getElementById('galleryGrid');
@@ -1921,7 +1792,7 @@ const products = [
       list.forEach(p=>{
         const wrap = document.createElement('div'); wrap.className='card-wrap';
         wrap.innerHTML = `
-          <div class="product-card product-card-gallery">
+          <div class="product-card">
             <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="300" height="400" data-id="${p.id}" style="cursor:pointer">
             <div class="product-body">
               <div class="product-title">${p.title}</div>
@@ -1939,8 +1810,7 @@ const products = [
       document.querySelectorAll('.view-btn').forEach(btn=>btn.addEventListener('click',e=>openModal(Number(e.currentTarget.dataset.id))));
       document.querySelectorAll('#galleryGrid img').forEach(img=>img.addEventListener('click',e=>openModal(Number(e.currentTarget.dataset.id))));
     }
-    const galleryProducts = products.slice(21); // 10 produk tambahan di bawah
-    renderGallery(galleryProducts);
+    renderGallery(products);
 
     // Filters / Search
     const searchInput = document.getElementById('searchInput');
@@ -1949,7 +1819,7 @@ const products = [
     const resetBtn = document.getElementById('resetBtn');
 
     function applyFilters(){
-      let list = galleryProducts.slice();
+      let list = products.slice();
       const q = searchInput.value.trim().toLowerCase();
       const cat = categorySelect.value;
       if(q){ list = list.filter(p => (p.title+' '+p.desc+' '+p.tag).toLowerCase().includes(q)); }
@@ -1961,7 +1831,7 @@ const products = [
     searchInput.addEventListener('input',applyFilters);
     categorySelect.addEventListener('change',applyFilters);
     sortSelect.addEventListener('change',applyFilters);
-    resetBtn.addEventListener('click',()=>{ searchInput.value=''; categorySelect.value='all'; sortSelect.value='default'; renderGallery(galleryProducts); });
+    resetBtn.addEventListener('click',()=>{ searchInput.value=''; categorySelect.value='all'; sortSelect.value='default'; renderGallery(products); });
 
     // Product modal view (simple)
     function openModal(id){
