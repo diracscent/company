@@ -1752,7 +1752,17 @@ const products = [
 {id:18,title:"Stronger With You Intensely 100 ml",desc:"Stronger With You Intensely 100 ml",price:1600000,img:"produk2.PNG",tag:"premium",link:"Produk 2"},
 {id:19,title:"Stronger With You Parfum 100 ml",desc:"Stronger With You Parfum 100 ml",price:2500000,img:"produk3.PNG",tag:"premium",link:"Produk 3"},
 {id:20,title:"Louis Voitton City Of Stars 100ml",desc:"Louis Voitton City Of Stars 100ml",price:5500000,img:"produk4.PNG",tag:"premium",link:"Produk 4"},
-{id:21,title:"Louis Voitton Meteore 100ml",desc:"Louis Voitton Meteore 100ml",price:6500000,img:"produk5.PNG",tag:"premium",link:"Produk 5"}
+{id:21,title:"Louis Voitton Meteore 100ml",desc:"Louis Voitton Meteore 100ml",price:6500000,img:"produk5.PNG",tag:"premium",link:"Produk 5"},
+{id:22,title:"Noir Atelier 01 100 ml",desc:"Noir Atelier 01 100 ml",price:720000,img:"katalog22.PNG",tag:"template",link:"Noir Atelier 01"},
+{id:23,title:"Velvet Citrus 02 100 ml",desc:"Velvet Citrus 02 100 ml",price:680000,img:"katalog23.PNG",tag:"template",link:"Velvet Citrus 02"},
+{id:24,title:"Amber Suede 03 100 ml",desc:"Amber Suede 03 100 ml",price:850000,img:"katalog24.PNG",tag:"template",link:"Amber Suede 03"},
+{id:25,title:"Rose Noir 04 100 ml",desc:"Rose Noir 04 100 ml",price:790000,img:"katalog25.PNG",tag:"template",link:"Rose Noir 04"},
+{id:26,title:"Noble Sandal 05 100 ml",desc:"Noble Sandal 05 100 ml",price:920000,img:"katalog26.PNG",tag:"template",link:"Noble Sandal 05"},
+{id:27,title:"Aqua Prestige 06 100 ml",desc:"Aqua Prestige 06 100 ml",price:650000,img:"katalog27.PNG",tag:"template",link:"Aqua Prestige 06"},
+{id:28,title:"Citrus Royal 07 100 ml",desc:"Citrus Royal 07 100 ml",price:700000,img:"katalog28.PNG",tag:"template",link:"Citrus Royal 07"},
+{id:29,title:"Imperial Wood 08 100 ml",desc:"Imperial Wood 08 100 ml",price:990000,img:"katalog29.PNG",tag:"template",link:"Imperial Wood 08"},
+{id:30,title:"Lunar Vanilla 09 100 ml",desc:"Lunar Vanilla 09 100 ml",price:760000,img:"katalog30.PNG",tag:"template",link:"Lunar Vanilla 09"},
+{id:31,title:"Crystal Musk 10 100 ml",desc:"Crystal Musk 10 100 ml",price:810000,img:"katalog31.PNG",tag:"template",link:"Crystal Musk 10"}
 ];
 
 
@@ -1769,7 +1779,10 @@ const products = [
         const card = document.createElement('article');
         card.className = 'product-card';
         card.innerHTML = `
-          <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="300" height="400">
+          <div style="position:relative;">
+            <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="300" height="400" onerror="this.style.display='none';this.parentNode.querySelector('.no-img').style.display='flex'">
+            <div class="no-img" style="display:none;align-items:center;justify-content:center;height:260px;background:#f3f3f3;color:#2b2b2b;font-weight:700;border-radius:6px;">${p.title}</div>
+          </div>
           <div class="product-body">
             <div class="product-title">${p.title}</div>
             <div class="product-price">${formatRupiah(p.price)}</div>
@@ -1782,7 +1795,8 @@ const products = [
         catalog.appendChild(card);
       });
     }
-  renderCatalog(products.slice(0,5)); // tampilkan semua produk// tampilkan 8 produk unggulan
+    const catalogProducts = products.slice(-10); // 10 produk katalog tambahan
+    renderCatalog(catalogProducts);
 
     // Render gallery masonry
     const galleryGrid = document.getElementById('galleryGrid');
