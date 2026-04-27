@@ -1720,6 +1720,120 @@ const productDescriptions = {
       opacity: 0.9 !important;
     }
   </style>
+
+<style>
+#catalog{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 18px;
+}
+#catalog .product-card.product-card-catalog{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 300px;
+  background: linear-gradient(180deg, #08101d 0%, #10192c 100%);
+  border: 1px solid rgba(212,175,55,.28);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(0,0,0,.38), 0 0 0 1px rgba(212,175,55,.08) inset;
+}
+#catalog .catalog-media{
+  position: relative;
+  flex: 0 0 60%;
+  min-height: 300px;
+  background: #09111e;
+}
+#catalog .catalog-media img,
+#catalog .catalog-media .no-img{
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+#catalog .catalog-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 16px 16px;
+  text-align: center;
+}
+#catalog .catalog-info .product-title{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.12rem;
+  line-height: 1.22;
+  color: #f8f4ea;
+  margin-bottom: 8px;
+}
+#catalog .catalog-info .product-price{
+  color: #f0c35f;
+  font-size: 1.28rem;
+  margin-bottom: 10px;
+}
+#catalog .catalog-info .muted.small{
+  color: rgba(255,255,255,.7) !important;
+}
+#catalog .catalog-actions{
+  margin-top: 14px;
+}
+#catalog .catalog-actions .btn{
+  min-width: 84px;
+}
+#catalog .btn-outline-secondary{
+  border: 1px solid rgba(255,255,255,.14) !important;
+  color: #fff !important;
+  background: rgba(255,255,255,.02) !important;
+}
+#catalog .btn-primary-grad{
+  background: linear-gradient(90deg,#ff6ea8,#7d63ff) !important;
+  color: #fff !important;
+}
+#catalog .add-to-cart-btn{
+  display: block;
+  width: 100%;
+  margin: 10px auto 0;
+}
+#galleryGrid .product-card{
+  background: #111827;
+  border: 1px solid rgba(212,175,55,.18);
+  border-radius: 14px;
+  overflow: hidden;
+}
+#galleryGrid .product-card .product-title{
+  color: #fff;
+}
+#galleryGrid .product-card .product-price{
+  color: #ffd966;
+}
+@media (max-width: 768px){
+  #catalog .product-card.product-card-catalog{
+    min-height: 260px;
+  }
+  #catalog .catalog-media,
+  #catalog .catalog-media img,
+  #catalog .catalog-media .no-img{
+    min-height: 260px;
+  }
+  #catalog .catalog-info{
+    padding: 14px 12px;
+  }
+  #catalog .catalog-info .product-title{
+    font-size: 1rem;
+  }
+  #catalog .catalog-info .product-price{
+    font-size: 1.1rem;
+  }
+  #catalog .catalog-actions{
+    gap: 8px !important;
+  }
+  #catalog .catalog-actions .btn{
+    min-width: 70px;
+    padding: .45rem .7rem;
+  }
+}
+</style>
+
 </body>
 </html>
 <!-- Scripts -->
@@ -1777,17 +1891,18 @@ const products = [
       catalog.innerHTML = '';
       list.forEach(p=>{
         const card = document.createElement('article');
-        card.className = 'product-card';
+        card.className = 'product-card product-card-catalog';
         card.innerHTML = `
-          <div style="position:relative;">
-            <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="300" height="400" onerror="this.style.display='none';this.parentNode.querySelector('.no-img').style.display='flex'">
-            <div class="no-img" style="display:none;align-items:center;justify-content:center;height:260px;background:#f3f3f3;color:#2b2b2b;font-weight:700;border-radius:6px;">${p.title}</div>
+          <div class="catalog-media">
+            <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="900" height="900" onerror="this.style.display='none';this.parentNode.querySelector('.no-img').style.display='flex'">
+            <div class="no-img" style="display:none;align-items:center;justify-content:center;height:100%;min-height:280px;background:#0b1120;color:#f3f1ee;font-weight:700;border-radius:0;">${p.title}</div>
+            <span class="badge-top special">Premium</span>
           </div>
-          <div class="product-body">
+          <div class="product-body catalog-info">
             <div class="product-title">${p.title}</div>
             <div class="product-price">${formatRupiah(p.price)}</div>
             <p class="muted small">${p.desc}</p>
-            <div class="d-flex justify-content-center gap-2 mt-2">
+            <div class="d-flex justify-content-center gap-2 mt-2 catalog-actions">
               <button class="btn btn-sm btn-outline-secondary" onclick="viewProduct(${p.id})">Lihat</button>
               <a class="btn btn-sm btn-primary-grad" href="https://wa.me/62882009257589?text=${encodeURIComponent('Halo kak, saya ingin memesan '+p.title)}" target="_blank">Pesan</a>
             </div>
@@ -1795,7 +1910,7 @@ const products = [
         catalog.appendChild(card);
       });
     }
-    const catalogProducts = products.slice(-10); // 10 produk katalog tambahan
+    const catalogProducts = products.slice(19,21); // 2 produk unggulan awal
     renderCatalog(catalogProducts);
 
     // Render gallery masonry
@@ -1806,7 +1921,7 @@ const products = [
       list.forEach(p=>{
         const wrap = document.createElement('div'); wrap.className='card-wrap';
         wrap.innerHTML = `
-          <div class="product-card">
+          <div class="product-card product-card-gallery">
             <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" width="300" height="400" data-id="${p.id}" style="cursor:pointer">
             <div class="product-body">
               <div class="product-title">${p.title}</div>
@@ -1824,7 +1939,8 @@ const products = [
       document.querySelectorAll('.view-btn').forEach(btn=>btn.addEventListener('click',e=>openModal(Number(e.currentTarget.dataset.id))));
       document.querySelectorAll('#galleryGrid img').forEach(img=>img.addEventListener('click',e=>openModal(Number(e.currentTarget.dataset.id))));
     }
-    renderGallery(products);
+    const galleryProducts = products.slice(21); // 10 produk tambahan di bawah
+    renderGallery(galleryProducts);
 
     // Filters / Search
     const searchInput = document.getElementById('searchInput');
@@ -1833,7 +1949,7 @@ const products = [
     const resetBtn = document.getElementById('resetBtn');
 
     function applyFilters(){
-      let list = products.slice();
+      let list = galleryProducts.slice();
       const q = searchInput.value.trim().toLowerCase();
       const cat = categorySelect.value;
       if(q){ list = list.filter(p => (p.title+' '+p.desc+' '+p.tag).toLowerCase().includes(q)); }
@@ -1845,7 +1961,7 @@ const products = [
     searchInput.addEventListener('input',applyFilters);
     categorySelect.addEventListener('change',applyFilters);
     sortSelect.addEventListener('change',applyFilters);
-    resetBtn.addEventListener('click',()=>{ searchInput.value=''; categorySelect.value='all'; sortSelect.value='default'; renderGallery(products); });
+    resetBtn.addEventListener('click',()=>{ searchInput.value=''; categorySelect.value='all'; sortSelect.value='default'; renderGallery(galleryProducts); });
 
     // Product modal view (simple)
     function openModal(id){
